@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "Always Continue",
+    "version": "1.0",
+    "description": "Automatically click the 'Continue' button in ChatGPT conversations, ensuring uninterrupted interactions with OpenAI's powerful language model.",
+    "permissions": [
+      "activeTab"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://chat.openai.com/*"
+        ],
+        "js": [
+          "content.js"
+        ]
+      }
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
