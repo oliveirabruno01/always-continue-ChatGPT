@@ -14,7 +14,7 @@ Download or clone this repository to your local machine.
 
 2 - Enable the "Developer mode" toggle in the top-right corner.
 
-3 - Click the "Load unpacked" button and select the directory where you saved the extension files.
+3 - Click the "Load unpacked" button and select the "src" directory where you saved the extension files.
 
 4 - The Always Continue extension will be installed and ready to use.
 
