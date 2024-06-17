@@ -1,5 +1,5 @@
 // content.js
-const continueButtonSelector = "main form div[data-projection-id] > button"
+const continueButtonSelector = "main form div div.absolute.bottom-full.left-0.right-0.z-20 div div div div > button"
 
 // Function to find and click the "continue" button
 function clickContinueButton() {
