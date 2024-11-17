@@ -1,7 +1,8 @@
 // content.js
-const continueButtonSelector = "main form div div.absolute.bottom-full.left-0.right-0.z-20 div div div div > button"
 
-// Function to find and click the "continue" button
+const continueButtonSelector = "main div.absolute.bottom-full.left-0.right-0.z-20 > div > div > div > div > button";
+const closeButtonSelector = '[data-testid="close-button"]';
+
 function clickContinueButton() {
     const continueButton = document.querySelector(continueButtonSelector);
     if (continueButton) {
@@ -9,11 +10,21 @@ function clickContinueButton() {
     }
 }
 
-// Function to continuously check for the "continue" button
-function checkForContinueButton() {
-    clickContinueButton();
-    setTimeout(checkForContinueButton, 1000); // Check every 1 second
+function clickCloseButton() {
+    const closeButton = document.querySelector(closeButtonSelector);
+    if (closeButton && closeButton.offsetParent !== null) {
+        closeButton.click();
+    }
 }
 
-// Start checking for the "continue" button when the page finishes loading
-window.addEventListener("load", checkForContinueButton);
+const observer = new MutationObserver(() => {
+    clickCloseButton();
+    clickContinueButton();
+});
+
+window.addEventListener("load", () => {
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
+});
